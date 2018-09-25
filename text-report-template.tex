@@ -1,0 +1,61 @@
+% Text report template
+\documentclass[11pt]{article}
+
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+
+\usepackage{xunicode}
+\usepackage{fontspec}
+\renewcommand*\familydefault{\sfdefault}
+\newfontfamily\DejaSans{DejaVu Sans}
+
+\usepackage[unicode=true]{hyperref}
+%\urlstyle{same}  % don't use monospace font for urls
+
+\usepackage[margin=0.5in,bottom=1in]{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+\renewcommand{\labelitemi}{-}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=blue
+}
+
+%$if(title-meta)$
+%            pdftitle={$title-meta$},
+%$endif$
+%$if(author-meta)$
+%            pdfauthor={$author-meta$},
+%$endif$
+%$if(keywords)$
+%            pdfkeywords={$for(keywords)$$keywords$$sep$, $endfor$},
+%$endif$
+%$if(colorlinks)$
+%            linkcolor=$if(linkcolor)$$linkcolor$$else$Maroon$endif$,
+%            citecolor=$if(citecolor)$$citecolor$$else$Blue$endif$,
+%            urlcolor=$if(urlcolor)$$urlcolor$$else$Blue$endif$,
+%$else$
+%            pdfborder={0 0 0},
+%$endif$
+%            breaklinks=true}
+
+\setlength\parindent{0pt}
+\setlength{\parskip}{0pt}
+\righthyphenmin=62
+\lefthyphenmin=62
+
+\begin{document}
+
+\parbox[c]{250pt}{ {\huge $title$} }                                              
+\hfill
+\parbox[c]{100pt}{ $author$ \\ $date$ }
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+$body$
+
+\end{document}
+
