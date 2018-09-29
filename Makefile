@@ -1,19 +1,26 @@
 .PHONY: all
 
-# This isn't an all rule, but it does yank down reveal.js for ya
-all: reveal.js 
+all: report_report.html report_report.pdf report_slides.html
 
 reveal.js: 
 	git clone https://github.com/hakimel/reveal.js.git
 
-%.pdf: %.md text-report-template.tex
+%_report.html: %.md template-html.html
 	pandoc --standalone --output $@ \
-		--template="text-report-template.tex" \
-		--latex-engine=xelatex \
+		--template=$(word 2,$^) --self-contained \
+		--to=html \
 		$< 
 
-darach_miller_cv.html: darach_miller_cv.md cvTemplate.html
-	pandoc --standalone --output darach_miller_cv.html \
-		--template="cvTemplate.html" \
-		darach_miller_cv.md 
+%_report.pdf: %.md template-pdf.tex
+	pandoc --standalone --output $@ \
+		--template=$(word 2,$^) --self-contained \
+		--to=latex --latex-engine=xelatex \
+		$< 
 
+%_slides.html: %.md template-slides.html reveal.js
+	pandoc --standalone --output $@ \ 
+		--template=$(word 2,$^) --self-contained \
+		--to=revealjs \
+		$< 
+
+#gpp -H <options> <filename> | pandoc -f markdown -t <format> -o <outfile>
