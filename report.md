@@ -4,7 +4,7 @@ title: "Report"
 date: 2018-09-25
 transition: none
 theme: simple
-toc: 'true'
+toc: true
 ---
 
 ## So big idea
