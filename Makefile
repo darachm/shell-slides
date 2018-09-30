@@ -11,15 +11,14 @@ reveal.js:
 		--template=$(word 2,$^) --self-contained \
 		--to=html
 
-%_report.pdf: %.md template-pdf.tex
-	gpp -H -Dreport $< | \
-	pandoc --standalone --output $@ \
-		--template=$(word 2,$^) --self-contained \
-		--to=latex --latex-engine=xelatex \
-
 %_slides.html: %.md template-slides.html reveal.js
 	gpp -H -Dslides $< | \
 	pandoc --standalone --output $@ \
 		--template=$(word 2,$^) --self-contained \
 		--to=revealjs --slide-level 2
 
+%_report.pdf: %.md template-pdf.tex
+	gpp -H -Dreport $< | \
+	pandoc --standalone --output $@ \
+		--template=$(word 2,$^) --self-contained \
+		--to=latex --latex-engine=xelatex \
