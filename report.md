@@ -12,6 +12,15 @@ rly important
 
 ## questions
 
+```graphviz
+digraph {
+    rankdir=LR;
+    a -> b;
+    b -> c;
+    c -> "?";
+}
+```
+
 so many
 
 <#ifdef slides>
