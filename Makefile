@@ -1,6 +1,6 @@
 .PHONY: all
 
-all: report_report.html report_report.pdf report_slides.html
+all: report_report.html report_slides.html report_report.pdf 
 
 wiring/reveal.js: 
 	git clone https://github.com/hakimel/reveal.js.git wiring/reveal.js
