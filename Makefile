@@ -2,8 +2,12 @@
 
 all: report_report.html report_slides.html report_report.pdf 
 
-wiring/reveal.js: 
+wiring/reveal.js/js/reveal.js: 
 	git clone https://github.com/hakimel/reveal.js.git wiring/reveal.js
+
+wiring/reveal.js/css/theme/darach_slides.css: wiring/reveal.js/js/reveal.js \
+	wiring/darach_slides.css
+	cp wiring/darach_slides.css wiring/reveal.js/css/theme/darach_slides.css 
 
 %_report.html: %.md wiring/template-html.html
 	gpp -H -Dreport $< | \
@@ -12,7 +16,8 @@ wiring/reveal.js:
 		--template=$(word 2,$^) --self-contained \
 		--to=html
 
-%_slides.html: %.md wiring/template-slides.html wiring/reveal.js
+%_slides.html: %.md wiring/template-slides.html wiring/reveal.js \
+	wiring/reveal.js/css/theme/darach_slides.css
 	gpp -H -Dslides $< | \
 	pandoc --standalone --output $@ \
 		-F ./wiring/pandoc-filter-graphviz \
