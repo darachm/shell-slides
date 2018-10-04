@@ -3,14 +3,19 @@ author: "Darach Miller"
 title: "Report"
 date: 2018-09-25
 transition: none
-theme: simple
+theme: darach_slides
 ---
 
-## So big idea
+# So big idea
 
 rly important
 
-## questions
+<#ifdef slides>
+---
+<section><h1>questions</h1>
+<#else>
+# questions
+<#endif> 
 
 ```graphviz
 digraph {
@@ -21,23 +26,17 @@ digraph {
 }
 ```
 
-so many
-
-<#ifdef slides>
-<section>
-
-## tangent
+#so many
 
 we can go on them
 
-## for a while
+# for a while
 
 or so
 
-</section>
-<#endif>
+<#ifdef slides></section><#endif>
 
-## answers
+# answers
 
 <#ifdef report>
 detailed analyses
@@ -45,5 +44,5 @@ detailed analyses
 
 yep
 
-## done, hanks
+# done, hanks
 

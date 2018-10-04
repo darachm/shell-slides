@@ -17,7 +17,7 @@ wiring/reveal.js:
 	pandoc --standalone --output $@ \
 		-F ./wiring/pandoc-filter-graphviz \
 		--template=$(word 2,$^) --self-contained \
-		-V revealjs-url=wiring/reveal.js --to=revealjs --slide-level 2
+		-V revealjs-url=wiring/reveal.js --to=revealjs --slide-level 1
 
 %_report.pdf: %.md wiring/template-pdf.tex
 	gpp -H -Dreport $< | \
