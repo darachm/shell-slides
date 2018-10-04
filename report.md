@@ -11,8 +11,11 @@ theme: darach_slides
 rly important
 
 <#ifdef slides>
----
-<section><h1>questions</h1>
+</section>
+<section><section>
+<h1>
+questions
+</h1>
 <#else>
 # questions
 <#endif> 
