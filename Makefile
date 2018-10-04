@@ -16,7 +16,7 @@ wiring/reveal.js/css/theme/darach_slides.css: wiring/reveal.js/js/reveal.js \
 		--template=$(word 2,$^) --self-contained \
 		--to=html
 
-%_slides.html: %.md wiring/template-slides.html wiring/reveal.js \
+%_slides.html: %.md wiring/template-slides.html wiring/reveal.js/js/reveal.js \
 	wiring/reveal.js/css/theme/darach_slides.css
 	gpp -H -Dslides $< | \
 	pandoc --standalone --output $@ \
