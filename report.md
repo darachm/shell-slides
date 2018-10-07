@@ -1,7 +1,7 @@
 ---
 author: "Darach Miller"
-title: "Report"
-date: 2018-09-25
+title: "Test"
+date: 2018-10-07
 transition: none
 theme: darach_slides
 ---
@@ -11,14 +11,17 @@ theme: darach_slides
 rly important
 
 <#ifdef slides>
-</section>
-<section><section>
+</section><section><section>
 <h1>
 questions
 </h1>
 <#else>
 # questions
 <#endif> 
+
+#so many
+
+<#ifdef slides></section><#endif>
 
 ```graphviz
 digraph {
@@ -29,23 +32,7 @@ digraph {
 }
 ```
 
-#so many
-
-we can go on them
-
-# for a while
-
-or so
-
-<#ifdef slides></section><#endif>
-
-# answers
-
 <#ifdef report>
 detailed analyses
 <#endif>
-
-yep
-
-# done, hanks
 

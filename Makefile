@@ -1,6 +1,12 @@
 .PHONY: all
 
-all: report_report.html report_slides.html report_report.pdf 
+inputz = $(filter-out README.md,$(wildcard *.md))
+wanted = \
+	$(patsubst %.md,%_report.html,$(inputz)) \
+	$(patsubst %.md,%_slides.html,$(inputz)) \
+	$(patsubst %.md,%_report.pdf,$(inputz))
+
+all: $(wanted)
 
 wiring/reveal.js/js/reveal.js: 
 	git clone https://github.com/hakimel/reveal.js.git wiring/reveal.js
