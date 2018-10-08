@@ -20,7 +20,7 @@ body {
 .reveal {
     font-family:'DejaVu Sans',sans-serif;                                          
     font-weight: 100;
-  font-size: 1em;
+  font-size: 18px;
   color: #000; }
 
 ::selection {
