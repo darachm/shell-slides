@@ -1,0 +1,222 @@
+<!doctype html><html lang="en"> <head><meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <link rel="stylesheet" href="wiring/reveal.js/css/reveal.css"> <!--<link rel="stylesheet" href="wiring/reveal.js/css/theme/black.css" id="theme">--> <link rel="stylesheet" href="wiring/reveal.js/lib/css/zenburn.css"> <link rel="stylesheet" href="wiring/darach_slides.css" id="theme">
+        <!-- Printing and PDF exports --> <script> var link = document.createElement( 'link' ); link.rel = 'stylesheet'; link.type = 'text/css'; link.href = window.location.search.match( /print-pdf/gi ) ? 'wiring/reveal.js/css/print/pdf.css' : 'wiring/reveal.js/css/print/paper.css'; document.getElementsByTagName( 'head' )[0].appendChild( link ); </script>
+<title>untitled</title>
+</head><body> <div class="reveal"> <div class="slides"> 
+
+<section>
+    <h1>untitled</h1>
+    <h3>unsubtitled</h3>
+    <h6>date</h6>
+    <table style="margin-top:05em;">
+        <tr>
+            <td>
+                <p>Darach Miller</p>
+                <p><small><a href="twitter.com/darachm">@darachm</a></small></p>
+            </td>
+            <td>
+                <p>Levy Lab, at JIMB ( NIST + Stanford )</p>
+                <p><small><a href="sashaflevy.github.io/levylab">sashaflevy.github.io/levylab</a></small></p>
+            </td>
+        </tr>
+    </table>
+</section>
+
+<section>
+    <p>slide</p>
+</section>
+
+
+<!--
+                <section>
+                        <a href="#/fragments">like this</a>.
+                </section>
+
+                <section>
+                    <h3>Vertslideheader</h3>
+                    <section>
+                        <h2>Vertical Slides</h2>
+                        <p>Slides can be nested inside of each other.</p>
+                        <p>Use the <em>Space</em> key to navigate through all slides.</p>
+                    </section>
+                    <section>
+                        <h2>Basement Level 1</h2>
+                        <p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+                    </section>
+                    <section>
+                        <h2>Basement Level 2</h2>
+                        <p>That's it, time to go back up.</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <p>first</p>
+                        <p class="fragment">second</p>
+                        <p class="fragment fade-in-then-semi-out">third</p>
+                        <p class="fragment fade-in-then-out">fourth</p>
+                        <p class="fragment highlight-red">fourth</p>
+                        <aside class="notes">
+                            This slide has fragments which are also stepped through in the notes window.
+                        </aside>
+                    </section>
+                </section>
+
+-->
+<!--
+                        <h2>Fragment Styles</h2>
+                        <p class="fragment fade-out">fade-out</p>
+                        <p class="fragment fade-in-then-out">fade-in-then-out</p>
+                        <p class="fragment fade-in-then-semi-out">fade-in-then-semi-out</p>
+                        <p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
+-->
+<!--
+
+                <section data-background="#b5533c">
+                    <h2>Background</h2>
+                </section>
+
+                <section>
+                    <pre><code class="hljs" data-trim contenteditable>
+function linkify( selector ) {
+  if( supports3DTransforms ) {
+
+    var nodes = document.querySelectorAll( selector );
+
+    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+      var node = nodes[i];
+
+      if( !node.className ) {
+        node.className += ' roll';
+      }
+    }
+  }
+}
+                    </code></pre>
+                </section>
+
+                <section>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Value</th>
+                                <th>Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Apples</td>
+                                <td>$1</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td>Lemonade</td>
+                                <td>$2</td>
+                                <td>18</td>
+                            </tr>
+                            <tr>
+                                <td>Bread</td>
+                                <td>$3</td>
+                                <td>2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>Clever Quotes</h2>
+                    <p>
+                        These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">The nice thing about standards is that there are so many to choose from</q> and block:
+                    </p>
+                    <blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+                        &ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
+                        reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
+                    </blockquote>
+                </section>
+
+                <section>
+                    <h2>Intergalactic Interconnections</h2>
+                    <p>
+                        You can link between slides internally,
+                        <a href="#/2/3">like this</a>.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Speaker View</h2>
+                    <p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
+                    <p>Press the <em>S</em> key to try it out.</p>
+
+                    <aside class="notes">
+                        Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Export to PDF</h2>
+                    <p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
+                    <iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+                </section>
+
+                <section>
+                    <h2>Global State</h2>
+                    <p>
+                        Set <code>data-state="something"</code> on a slide and <code>"something"</code>
+                        will be added as a class to the document element when the slide is open. This lets you
+                        apply broader style changes, like switching the page background.
+                    </p>
+                </section>
+
+                <section data-state="customevent">
+                    <h2>State Events</h2>
+                    <p>
+                        Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
+                    </p>
+                    <pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+Reveal.addEventListener( 'customevent', function() {
+    console.log( '"customevent" has fired' );
+} );
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Take a Moment</h2>
+                    <p>
+                        Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
+                    </p>
+                </section>
+-->
+
+            </div>
+        </div>
+
+        <script src="wiring/reveal.js/lib/js/head.min.js"></script>
+        <script src="wiring/reveal.js/js/reveal.js"></script>
+
+        <script>
+
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: false,
+                progress: false,
+                history: true,
+                center: true,
+
+                transition: 'none', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'wiring/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'wiring/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'wiring/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'wiring/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'wiring/reveal.js/plugin/search/search.js', async: true },
+                    { src: 'wiring/reveal.js/plugin/zoom-js/zoom.js', async: true },
+                    { src: 'wiring/reveal.js/plugin/notes/notes.js', async: true }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
