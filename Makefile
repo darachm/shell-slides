@@ -69,3 +69,4 @@ ts.html ts.js ts.css: wiring/reveal.js/js/reveal.js \
 	echo '<script>document.getElementById("viz").innerHTML = new Viz("digraph { a -> b; }").renderSVGElement();</script>' >> ts.html
 	#
 	echo "</body></html>" >> ts.html
+
