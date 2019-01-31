@@ -1,29 +1,31 @@
 <!doctype html><html lang="en"> <head><meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <link rel="stylesheet" href="wiring/reveal.js/css/reveal.css"> <!--<link rel="stylesheet" href="wiring/reveal.js/css/theme/black.css" id="theme">--> <link rel="stylesheet" href="wiring/reveal.js/lib/css/zenburn.css"> <link rel="stylesheet" href="wiring/darach_slides.css" id="theme">
-        <!-- Printing and PDF exports --> <script> var link = document.createElement( 'link' ); link.rel = 'stylesheet'; link.type = 'text/css'; link.href = window.location.search.match( /print-pdf/gi ) ? 'wiring/reveal.js/css/print/pdf.css' : 'wiring/reveal.js/css/print/paper.css'; document.getElementsByTagName( 'head' )[0].appendChild( link ); </script>
+<script src="wiring/dagre-d3.min.js"></script> <script src="wiring/d3.v4.min.js"></script>
+<!-- Printing and PDF exports --> <script> var link = document.createElement( 'link' ); link.rel = 'stylesheet'; link.type = 'text/css'; link.href = window.location.search.match( /print-pdf/gi ) ? 'wiring/reveal.js/css/print/pdf.css' : 'wiring/reveal.js/css/print/paper.css'; document.getElementsByTagName( 'head' )[0].appendChild( link ); </script>
 <title>untitled</title>
 </head><body> <div class="reveal"> <div class="slides"> 
 
 <section>
-    <h1>untitled</h1>
-    <h3>unsubtitled</h3>
-    <h6>date</h6>
-    <table style="margin-top:05em;">
-        <tr>
-            <td>
+    <div style="float:left;padding:1em;border:1px solid black;margin-bottom:2em;">
+        <h1>untitled</h1>
+        <h3>unsubtitled</h3>
+        <h6>date</h6>
+    </div>
+    <div style="clear:both;float:left;padding:1em;border:1px solid black;">
                 <p>Darach Miller</p>
                 <p><small><a href="twitter.com/darachm">@darachm</a></small></p>
-            </td>
-            <td>
+    </div>
+    <div style="float:right;padding:1em;border:1px solid black;">
                 <p>Levy Lab, at JIMB ( NIST + Stanford )</p>
                 <p><small><a href="sashaflevy.github.io/levylab">sashaflevy.github.io/levylab</a></small></p>
-            </td>
-        </tr>
-    </table>
+    </div>
 </section>
 
 <section>
-    <p>slide</p>
+    <h3>svg diagram</h3>
+    <div>
+    <svg id="flow1" width=900px height=600px><g/></svg>
 </section>
+
 
 
 <!--
@@ -194,16 +196,13 @@ Reveal.addEventListener( 'customevent', function() {
         <script src="wiring/reveal.js/js/reveal.js"></script>
 
         <script>
-
             // More info https://github.com/hakimel/reveal.js#configuration
             Reveal.initialize({
                 controls: false,
                 progress: false,
                 history: true,
                 center: true,
-
                 transition: 'none', // none/fade/slide/convex/concave/zoom
-
                 // More info https://github.com/hakimel/reveal.js#dependencies
                 dependencies: [
                     { src: 'wiring/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
@@ -212,11 +211,44 @@ Reveal.addEventListener( 'customevent', function() {
                     { src: 'wiring/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
                     { src: 'wiring/reveal.js/plugin/search/search.js', async: true },
                     { src: 'wiring/reveal.js/plugin/zoom-js/zoom.js', async: true },
-                    { src: 'wiring/reveal.js/plugin/notes/notes.js', async: true }
+                    { src: 'wiring/reveal.js/plugin/notes/notes.js', async: true },
                 ]
             });
-
         </script>
+
+<script type="text/javascript">
+var g = new dagreD3.graphlib.Graph().setGraph({rankdir: "LR"});
+[
+    {name:"A", style:"fill: #ff0000"},
+    {name:"B", style:"fill: #00ff00"},
+    {name:"C", style:"fill: #0000ff"},
+    {name:"D"},
+    {name:"E"},
+    {name:"F"}
+    ].forEach(function(node) { g.setNode(node.name, { label: (node.label ? node.label : node.name), style: (node.style ? node.style : "fill:#fff;") }); });
+
+[
+    {from:"A",to:"B"},
+    {from:"B",to:"C"},
+    {from:"C",to:"A"},
+    {from:"C",to:"D"},
+    {from:"D",to:"E"},
+    {from:"E",to:"F"}
+    ].forEach(function(edge) { g.setEdge(edge.from, edge.to, { label: (edge.label ? edge.label : ""), style: (edge.style ? edge.style : "fill:#fff; stroke:#000; stroke-width:2") }); });
+
+var svg = d3.select("#flow1")
+var inner = svg.select("g");
+var zoom = d3.zoom().on("zoom", function() {
+      inner.attr("transform", d3.event.transform);
+    });
+svg.call(zoom);
+var render = new dagreD3.render();
+render(inner, g);
+var initialScale = 0.75;
+svg.call(zoom.transform, d3.zoomIdentity.translate((svg.attr("width").replace(/px$/, '') - g.graph().width * initialScale) / 2, 20).scale(initialScale));
+
+</script>
+
 
     </body>
 </html>
