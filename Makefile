@@ -19,7 +19,6 @@ wiring/d3.v4.min.js:
 wiring/dagre-d3.min.js:
 	wget https://dagrejs.github.io/project/dagre-d3/latest/dagre-d3.min.js -O $@
 
-
 wiring/angularplasmid.complete.min.js:
 	wget http://angularplasmid.vixis.com/downloadfile.php?f=angularplasmid.complete.min.js -O $@
 

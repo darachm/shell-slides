@@ -21,6 +21,10 @@
 </section>
 
 <section>
+    <h3>math \[ a+b^c \]</h3>
+</section>
+
+<section>
     <h3>svg diagram</h3>
     <svg id="flow1" width=900px height=600px><g/></svg>
 </section>
@@ -206,6 +210,10 @@ Reveal.addEventListener( 'customevent', function() {
                 center: true,
                 transition: 'none', // none/fade/slide/convex/concave/zoom
                 // More info https://github.com/hakimel/reveal.js#dependencies
+                math: {
+                    mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+                    config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+                },
                 dependencies: [
                     { src: 'wiring/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
                     { src: 'wiring/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
@@ -214,6 +222,7 @@ Reveal.addEventListener( 'customevent', function() {
                     { src: 'wiring/reveal.js/plugin/search/search.js', async: true },
                     { src: 'wiring/reveal.js/plugin/zoom-js/zoom.js', async: true },
                     { src: 'wiring/reveal.js/plugin/notes/notes.js', async: true },
+                    { src: 'wiring/reveal.js/plugin/math/math.js', async: true },
                 ]
             });
         </script>

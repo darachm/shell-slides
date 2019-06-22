@@ -287,3 +287,5 @@ p.author, p.date { text-align: center; }
     background-color: #fff; } }
 
 code{white-space: pre;}
+
+p.citez { font-size:0.8em; float:right;}
