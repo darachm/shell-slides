@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"> <head><meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <link rel="stylesheet" href="wiring/reveal.js/css/reveal.css"> <!--<link rel="stylesheet" href="wiring/reveal.js/css/theme/black.css" id="theme">--> <link rel="stylesheet" href="wiring/reveal.js/lib/css/zenburn.css"> <link rel="stylesheet" href="wiring/darach_slides.css" id="theme">
-<script src="wiring/dagre-d3.min.js"></script> <script src="wiring/d3.v4.min.js"></script>
+<!--<script src="wiring/dagre-d3.min.js"></script> <script src="wiring/d3.v4.min.js"></script>-->
 <!-- Printing and PDF exports --> <script> var link = document.createElement( 'link' ); link.rel = 'stylesheet'; link.type = 'text/css'; link.href = window.location.search.match( /print-pdf/gi ) ? 'wiring/reveal.js/css/print/pdf.css' : 'wiring/reveal.js/css/print/paper.css'; document.getElementsByTagName( 'head' )[0].appendChild( link ); </script>
 <title>untitled</title>
 </head><body> <div class="reveal"> <div class="slides"> 
@@ -278,6 +278,7 @@ Reveal.addEventListener( 'customevent', function() {
             });
         </script>
 
+<!--
 <script type="text/javascript">
 var g = new dagreD3.graphlib.Graph().setGraph({rankdir: "LR"});
 [
@@ -310,6 +311,7 @@ var initialScale = 0.75;
 svg.call(zoom.transform, d3.zoomIdentity.translate((svg.attr("width").replace(/px$/, '') - g.graph().width * initialScale) / 2, 20).scale(initialScale));
 
 </script>
+-->
 
 
     </body>
